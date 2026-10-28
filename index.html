@@ -1,0 +1,687 @@
+<!DOCTYPE html><html lang="ko" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"blue":{"50":"#f0f4fa","100":"#dde6f3","200":"#bccbe4","300":"#8ea6cc","400":"#5a78a8","500":"#1f3f7a","600":"#0a2e6b","700":"#04225e","800":"#031a4a","900":"#021338","950":"#010c26"},"sky":{"50":"#eef3fb","100":"#d9e4f5","200":"#b3c7e8","300":"#84a3d4","400":"#3f68a8","500":"#2c5596","600":"#1e4482","700":"#16366c","800":"#102957","900":"#0b1e42","950":"#06132b"},"primary":"#1f3f7a","primary-container":"#3f68a8","primary-light":"#f0f4fa","primary-hover":"#0a2e6b","secondary":"#3f68a8","tertiary":"#f59e0b","surface":"#fbfcfe","surface-variant":"#f0f5fc","surface-container":"#f0f4fb","surface-container-low":"#f8fafc","surface-container-high":"#e2eaf6","surface-container-lowest":"#ffffff","outline":"#94a3b8","outline-variant":"#e2e8f0","on-surface":"#0f172a","on-surface-variant":"#64748b","on-primary":"#ffffff","background":"#fbfcfe"},borderRadius:{DEFAULT:"0.375rem",lg:"0.75rem",xl:"1rem","2xl":"1.25rem",full:"9999px"},fontFamily:{"headline-xl":["Inter","Noto Sans KR","sans-serif"],"headline-lg":["Inter","Noto Sans KR","sans-serif"],"headline-md":["Inter","Noto Sans KR","sans-serif"],"headline-sm":["Inter","Noto Sans KR","sans-serif"],"body-lg":["Inter","Noto Sans KR","sans-serif"],"body-md":["Inter","Noto Sans KR","sans-serif"],"body-sm":["Inter","Noto Sans KR","sans-serif"],"label-lg":["Inter","Noto Sans KR","sans-serif"],"label-md":["Inter","Noto Sans KR","sans-serif"],"label-sm":["Inter","Noto Sans KR","sans-serif"],"caption":["Inter","Noto Sans KR","sans-serif"]}}}};</script><title>RHEA VISION</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+  html { min-width: 1440px; scroll-behavior: smooth; scroll-padding-top: 90px; }
+  body { font-family: "Noto Sans KR", Inter, sans-serif; }
+  .rv-wrap { position: relative; width: 1440px; margin: 0 auto; }
+  .logo-white { filter: brightness(0) invert(1); }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; line-height: 1; }
+
+  .rv-header { background: linear-gradient(90deg, #001c3d 0%, #1c4fa5 100%); }
+  .rv-dd { position: relative; }
+  .rv-dd-btn { display: inline-flex; align-items: center; gap: 4px; color: #fff; font-size: 18.2px; font-weight: 500; height: 90px; }
+  .rv-dd-btn .material-symbols-outlined { font-size: 26px; transition: transform .2s; }
+  .rv-dd:hover .rv-dd-btn .material-symbols-outlined, .rv-dd:focus-within .rv-dd-btn .material-symbols-outlined { transform: rotate(180deg); }
+  .rv-dd-menu { position: absolute; top: 78px; left: 50%; transform: translate(-50%, 6px); min-width: 200px; padding: 8px; border-radius: 12px; background: #fff; box-shadow: 0 12px 32px rgba(0, 28, 61, .18); opacity: 0; visibility: hidden; transition: opacity .18s, transform .18s, visibility .18s; }
+  .rv-dd:hover .rv-dd-menu, .rv-dd:focus-within .rv-dd-menu { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+  .rv-dd-menu a { display: block; padding: 10px 14px; border-radius: 8px; font-size: 15px; color: #1e293b; white-space: nowrap; }
+  .rv-dd-menu a:hover { background: #eef5ff; color: #04225e; }
+  .rv-cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 27px; color: #0f3a30; font-weight: 500; background: linear-gradient(90deg, #4ea6ff, #85c2ff); transition: filter .2s, box-shadow .2s; }
+  .rv-cta:hover { filter: brightness(1.06); box-shadow: 0 6px 18px rgba(78, 166, 255, .45); }
+  .rv-search { background: #fff; border-bottom: 1px solid #e2e8f0; box-shadow: 0 8px 24px rgba(0, 0, 0, .08); }
+
+  .rv-hero { background: linear-gradient(75deg, #13295a 0%, #2d5bab 55%, #5888d0 100%); }
+  .rv-dot { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: rgba(144, 227, 255, .5); }
+  .rv-glass { position: relative; width: 307px; height: 395px; padding: 32px 26px 0; border-radius: 20px; color: #fff; background: rgba(255, 255, 255, .25); border: 1px solid rgba(204, 238, 255, .72); backdrop-filter: blur(32px); -webkit-backdrop-filter: blur(32px); }
+  .rv-glass-icon { width: 63px; height: 63px; border-radius: 50%; background: rgba(241, 248, 255, .33); display: flex; align-items: center; justify-content: center; color: #005cb9; }
+  .rv-glass-icon .material-symbols-outlined { font-size: 26px; }
+  .rv-glass h2 { margin-top: 17px; font-size: 22.8px; line-height: 28.5px; font-weight: 700; }
+  .rv-glass p { margin-top: 40px; font-size: 15.9px; line-height: 25px; color: rgba(255, 255, 255, .75); }
+  .rv-glass .rv-cta { position: absolute; left: 26px; top: 314px; }
+
+  .rv-track { display: flex; height: 100%; transition: transform .6s cubic-bezier(.65, 0, .35, 1); }
+  .rv-track img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; }
+  .rv-bar { width: 3px; height: 13px; background: #bbb; }
+  #slider-toggle.paused .rv-bar:first-child { width: 0; height: 0; background: none; border-left: 11px solid #bbb; border-top: 6.5px solid transparent; border-bottom: 6.5px solid transparent; }
+  #slider-toggle.paused .rv-bar:last-child { display: none; }
+  .rv-dot-btn { width: 11px; height: 11px; border-radius: 50%; background: #ccc; transition: background .2s; }
+  .rv-dot-btn[aria-current="true"] { background: #04225e; }
+
+  .rv-quick { width: 105px; padding: 19px 0 14px; border-radius: 14px; background: #fff; border: 1px solid #e6e6e6; display: flex; flex-direction: column; align-items: center; }
+  .rv-quick-items { display: flex; flex-direction: column; gap: 14px; overflow: hidden; max-height: 400px; transition: max-height .3s, opacity .3s; }
+  .rv-quick.collapsed .rv-quick-items { max-height: 0; opacity: 0; }
+  .rv-quick-items a { display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 13.7px; color: #222; white-space: nowrap; }
+  .rv-quick-items a > span { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; transition: transform .2s; }
+  .rv-quick-items a:hover > span { transform: translateY(-2px); }
+  .rv-quick-items .material-symbols-outlined { font-size: 20px; }
+  .rv-quick-plus { margin-top: 12px; width: 64px; height: 64px; border-radius: 50%; border: 1px solid #04225e; color: #04225e; display: flex; align-items: center; justify-content: center; transition: transform .3s; }
+  .rv-quick-plus .material-symbols-outlined { font-size: 30px; }
+  .rv-quick.collapsed .rv-quick-plus { margin-top: 0; transform: rotate(45deg); }
+
+  .rv-chat { width: 79px; height: 79px; border-radius: 50%; background: #04225e; border: 1px solid #a7ceff; display: flex; align-items: center; justify-content: center; color: #04225e; box-shadow: 0 8px 24px rgba(4, 34, 94, .35); }
+  .rv-chat .material-symbols-outlined { width: 33px; height: 25px; border-radius: 7px; background: #fff; font-size: 26px; display: flex; align-items: center; justify-content: center; }
+</style>
+</head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-blue-100 selection:text-blue-700 leading-relaxed"><header class="rv-header fixed top-0 left-0 w-full z-50">
+  <div class="rv-wrap h-[90px] flex items-center">
+    <a href="#top" class="shrink-0 ml-[50px]" aria-label="RHEA VISION 홈"><img src="assets/rheavision-logo-1-04.svg" alt="RHEA VISION" class="h-[66px] w-auto logo-white"></a>
+    <nav class="hidden lg:flex items-center ml-[363px] gap-[100px]">
+      <div class="rv-dd">
+        <button type="button" class="rv-dd-btn">제품 <span class="material-symbols-outlined">arrow_drop_down</span></button>
+        <div class="rv-dd-menu"><a href="#hero-cards">키오에듀 교육용 키오스크</a><a href="#news">RV2000 AI 스마트 케어</a></div>
+      </div>
+      <div class="rv-dd">
+        <button type="button" class="rv-dd-btn">도입 분야 <span class="material-symbols-outlined">arrow_drop_down</span></button>
+        <div class="rv-dd-menu"><a href="#ai-care">복지관 · 경로당</a><a href="#ai-care">교육기관</a><a href="#ai-care">공공기관</a></div>
+      </div>
+      <div class="rv-dd">
+        <button type="button" class="rv-dd-btn">자료실 <span class="material-symbols-outlined">arrow_drop_down</span></button>
+        <div class="rv-dd-menu"><a href="#news">업데이트 소식</a><a href="#news">자료 다운로드</a><a href="#consultation-card">자주 묻는 질문</a></div>
+      </div>
+    </nav>
+    <button type="button" id="search-open" class="hidden lg:inline-flex ml-[73px] text-white" aria-label="검색"><span class="material-symbols-outlined text-[40px]">search</span></button>
+    <a href="#consultation-card" class="rv-cta ml-auto mr-[65px] w-[163px] h-[55px] text-[18px]">도입 문의 <span class="material-symbols-outlined text-[22px]">arrow_forward</span></a>
+  </div>
+  <form id="search-bar" class="rv-search hidden" role="search">
+    <div class="max-w-3xl mx-auto flex items-center gap-3 px-6 py-4">
+      <span class="material-symbols-outlined text-slate-400">search</span>
+      <input id="search-input" type="search" placeholder="제품, 도입 분야, 자료를 검색하세요" class="flex-1 bg-transparent outline-none text-[16px] text-slate-800 placeholder:text-slate-400">
+      <button type="button" id="search-close" class="text-slate-500 hover:text-slate-800" aria-label="닫기"><span class="material-symbols-outlined">close</span></button>
+    </div>
+  </form>
+</header>
+
+<main id="top" class="w-full pt-[90px] bg-background"><div class="flex flex-col w-full">
+
+<!-- Hero -->
+<section class="rv-hero relative w-full h-[815px] overflow-hidden">
+  <div class="rv-wrap relative h-full">
+    <img src="assets/hero_kiosk.webp" alt="" class="absolute left-[-111px] top-[162px] w-[1148px] h-[646px] max-w-none pointer-events-none select-none">
+    <img src="assets/hero_camera.webp" alt="" class="absolute left-[434px] top-[249px] w-[1006px] h-[566px] max-w-none pointer-events-none select-none">
+    <i class="rv-dot" style="left:410px;top:27px"></i><i class="rv-dot" style="left:429px;top:18px"></i><i class="rv-dot" style="left:785px;top:92px"></i><i class="rv-dot" style="left:848px;top:56px"></i><i class="rv-dot" style="left:1019px;top:19px"></i><i class="rv-dot" style="left:1303px;top:58px"></i><i class="rv-dot" style="left:1386px;top:55px"></i><i class="rv-dot" style="left:1157px;top:274px"></i><i class="rv-dot" style="left:1355px;top:274px"></i><i class="rv-dot" style="left:23px;top:311px"></i><i class="rv-dot" style="left:1343px;top:547px"></i><i class="rv-dot" style="left:986px;top:354px"></i>
+    <div class="absolute left-0 right-0 top-[100px] text-center text-white pointer-events-none">
+      <h1 class="font-bold text-[59px] leading-[66px] tracking-[-0.5px]">디지털 생활과 케어를<br>함께 돕는 기술</h1>
+      <p class="mt-[17px] text-[20.5px] leading-[33px] text-[#d6e6e0]">시니어의 키오스크 연습부터 복지관의 비접촉 AI 상태 분석까지<br>두 가지 사업으로 현장을 지원합니다.</p>
+    </div>
+    <div id="hero-cards" class="absolute top-[369px] left-1/2 -translate-x-1/2 flex gap-[37px]">
+      <article class="rv-glass">
+        <div class="rv-glass-icon"><span class="material-symbols-outlined">person</span></div>
+        <h2>키오에듀<br>교육용 키오스크</h2>
+        <p>음식 주문, 교통편 예매, ATM,<br>병원 접수, 민원서류 발급을<br>미리 연습하는 교육 솔루션</p>
+        <a href="#trending-courses" class="rv-cta w-[211px] h-[57px] text-[15.9px] rounded-[20px] justify-between px-[26px]">키오에듀 보기 <span class="material-symbols-outlined text-[22px]">arrow_forward</span></a>
+      </article>
+      <article class="rv-glass">
+        <div class="rv-glass-icon"><span class="material-symbols-outlined">crop_landscape</span></div>
+        <h2>RV2000<br>AI 스마트 케어</h2>
+        <p>카메라 기반 비접촉 얼굴 인식으로<br>출석 확인과 상태 분석을 돕는<br>케어 보조 시스템</p>
+        <a href="#ai-care" class="rv-cta w-[208px] h-[57px] text-[15.9px] rounded-[20px] justify-between px-[26px]">RV2000 보기 <span class="material-symbols-outlined text-[22px]">arrow_forward</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 업데이트 소식 -->
+<section id="news" class="relative w-full bg-[#fafcff] pt-[66px]">
+  <div class="bg-white h-[801px]">
+    <div class="rv-wrap relative h-full">
+      <img src="assets/rheavision-logo-1-04.svg" alt="RHEA VISION" class="absolute left-[48px] top-[27px] h-[66px] w-auto">
+      <h2 class="absolute left-[172px] top-[36px] text-[41px] font-bold text-[#111] tracking-[-0.5px]">업데이트 소식</h2>
+      <div class="absolute right-[53px] top-[43px] flex items-center gap-[10px]">
+        <button type="button" class="mr-[34px] text-[#111]" data-search-trigger aria-label="소식 검색"><span class="material-symbols-outlined text-[38px]">search</span></button>
+        <a href="#news" class="h-[34px] px-[12px] inline-flex items-center rounded-[3px] bg-[#111] text-white text-[14.8px] font-medium hover:bg-black">자료 다운로드</a>
+        <a href="#consultation-card" class="h-[34px] px-[15px] inline-flex items-center rounded-[3px] bg-[#04225e] text-white text-[14.8px] font-medium hover:bg-[#031a4a]">도입 문의</a>
+      </div>
+
+      <div id="news-slider" class="rv-slider absolute left-[38px] top-[247px] w-[1349px] h-[270px] rounded-[11px] overflow-hidden bg-black" aria-roledescription="carousel">
+        <div class="rv-track">
+          <img src="assets/slide_2036.jpg" alt="RV2000 카메라 모듈">
+          <img src="assets/slide_2030.jpg" alt="RV2000 키오스크 정면">
+          <img src="assets/slide_2031.jpg" alt="RV2000 카메라와 디스플레이">
+          <img src="assets/slide_2033.jpg" alt="RV2000 키오스크 측면">
+          <img src="assets/slide_2036.jpg" alt="" aria-hidden="true">
+        </div>
+        <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(90deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.45) 45%,rgba(0,0,0,0) 75%)"></div>
+        <div class="absolute left-[89px] top-[56px] text-white">
+          <p class="text-[23.9px] font-medium">AI 스마트 케어</p>
+          <p class="mt-[2px] flex items-baseline gap-[16px]"><span class="font-['Inter'] font-bold text-[52.4px] leading-[73px]">RV2000</span><span class="text-[31.9px] font-medium">케어 보조 시스템</span></p>
+          <a href="#ai-care" class="mt-[14px] inline-flex items-center gap-1 text-[19.4px] font-medium hover:underline">보러가기 <span class="material-symbols-outlined text-[22px]">chevron_right</span></a>
+        </div>
+      </div>
+      <div class="absolute left-0 right-0 top-[541px] flex items-center justify-center gap-[13px]">
+        <button type="button" id="slider-toggle" class="w-[13px] h-[13px] flex items-center justify-center gap-[4px] mr-[3px]" aria-label="자동 넘김 일시정지"><i class="rv-bar"></i><i class="rv-bar"></i></button>
+        <div id="slider-dots" class="flex gap-[13px]"></div>
+      </div>
+
+      <aside id="quick-menu" class="rv-quick absolute right-[62px] top-[188px]">
+        <div class="rv-quick-items">
+          <a href="#top"><span style="background:#f05a28"><span class="material-symbols-outlined">web_asset</span></span>사이트맵</a>
+          <a href="#consultation-card"><span style="background:#04225e"><span class="material-symbols-outlined">web_asset</span></span>1:1 문의</a>
+          <a href="#footer"><span style="background:#3aa04a"><span class="material-symbols-outlined">web_asset</span></span>오시는 길</a>
+          <a href="#footer"><span style="background:#2d6fe0"><span class="material-symbols-outlined">web_asset</span></span>레아비전 SNS</a>
+        </div>
+        <button type="button" id="quick-toggle" class="rv-quick-plus" aria-label="퀵메뉴 접기" aria-expanded="true"><span class="material-symbols-outlined">add</span></button>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 얼굴을 읽는 AI 케어 기술 -->
+<section id="ai-care" class="relative w-full h-[819px] overflow-hidden bg-black">
+  <img src="assets/ai_banner.jpg" alt="RV2000 카메라 모듈 클로즈업" class="absolute inset-0 w-full h-full object-cover">
+  <div class="rv-wrap relative h-full text-white text-center">
+    <img src="assets/rheavision-logo-1-04.svg" alt="RHEA VISION" class="absolute left-[71px] top-[31px] h-[66px] w-auto logo-white">
+    <h2 class="pt-[302px] text-[66px] leading-[92px] font-bold tracking-[-0.5px]">얼굴을 읽는 AI 케어 기술</h2>
+    <p class="mt-[33px] text-[26.2px] leading-[48px]">레아비전의 비전 AI는 일반 카메라로 얼굴과 표정을 분석해,<br>복지 현장의 출석 확인과 케어 업무를 돕습니다.</p>
+    <p class="absolute left-0 right-0 bottom-[55px] text-[12.4px] text-white/45">제품 이미지 · RV2000 카메라 모듈 클로즈업</p>
+  </div>
+</section>
+
+<a href="#consultation-card" class="rv-chat fixed z-40 right-[38px] bottom-[40px]" aria-label="상담 채팅"><span class="material-symbols-outlined">more_horiz</span></a>
+<section class="w-full py-24 bg-white border-y border-slate-100/60">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="text-xs font-bold text-blue-600 uppercase tracking-wider block mb-2">Curriculum</span>
+<h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-3 leading-snug">
+        산업 현장이 필요로 하는 4대 핵심 트랙
+      </h2>
+<p class="text-sm sm:text-base text-slate-500 leading-relaxed">
+        기초 이론에 그치지 않고, 비즈니스 임팩트를 낼 수 있도록 구성된 맞춤 커리큘럼
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<a class="group bg-slate-50/60 hover:bg-white rounded-2xl p-7 border border-slate-100 hover:border-blue-200 shadow-sm hover:shadow-lg hover:shadow-blue-500/5 transition-all flex flex-col justify-between" href="#">
+<div>
+<div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-gradient-to-tr group-hover:from-blue-500 group-hover:to-sky-400 group-hover:text-white transition-all mb-6">
+<span class="material-symbols-outlined text-[24px]">query_stats</span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded-full bg-blue-50 text-blue-600 text-xs font-semibold">14개 과정</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors leading-snug">
+            AI &amp; Data Engineering
+          </h3>
+<p class="text-xs text-slate-500 leading-relaxed">
+            LLM 파인튜닝, MLOps, 데이터 파이프라인 엔지니어링 실무
+          </p>
+</div>
+<div class="pt-6 flex items-center justify-between text-blue-600 text-xs font-semibold">
+<span class="">상세보기</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 2 -->
+<a class="group bg-slate-50/60 hover:bg-white rounded-2xl p-7 border border-slate-100 hover:border-blue-200 shadow-sm hover:shadow-lg hover:shadow-blue-500/5 transition-all flex flex-col justify-between" href="#">
+<div>
+<div class="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center text-sky-600 group-hover:bg-gradient-to-tr group-hover:from-blue-500 group-hover:to-sky-400 group-hover:text-white transition-all mb-6">
+<span class="material-symbols-outlined text-[24px]">terminal</span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded-full bg-sky-50 text-sky-600 text-xs font-semibold">18개 과정</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors leading-snug">
+            Full-stack &amp; Cloud
+          </h3>
+<p class="text-xs text-slate-500 leading-relaxed">
+            Next.js, Spring Boot 마이크로서비스, AWS 아키텍처
+          </p>
+</div>
+<div class="pt-6 flex items-center justify-between text-blue-600 text-xs font-semibold">
+<span class="">상세보기</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 3 -->
+<a class="group bg-slate-50/60 hover:bg-white rounded-2xl p-7 border border-slate-100 hover:border-blue-200 shadow-sm hover:shadow-lg hover:shadow-blue-500/5 transition-all flex flex-col justify-between" href="#">
+<div>
+<div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-gradient-to-tr group-hover:from-blue-500 group-hover:to-sky-400 group-hover:text-white transition-all mb-6">
+<span class="material-symbols-outlined text-[24px]">design_services</span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded-full bg-blue-50 text-blue-600 text-xs font-semibold">9개 과정</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors leading-snug">
+            Product &amp; UX
+          </h3>
+<p class="text-xs text-slate-500 leading-relaxed">
+            데이터 드리븐 프로덕트 분석, PRD 기획 및 디자인 시스템
+          </p>
+</div>
+<div class="pt-6 flex items-center justify-between text-blue-600 text-xs font-semibold">
+<span class="">상세보기</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 4 -->
+<a class="group bg-slate-50/60 hover:bg-white rounded-2xl p-7 border border-slate-100 hover:border-blue-200 shadow-sm hover:shadow-lg hover:shadow-blue-500/5 transition-all flex flex-col justify-between" href="#">
+<div>
+<div class="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center text-sky-600 group-hover:bg-gradient-to-tr group-hover:from-blue-500 group-hover:to-sky-400 group-hover:text-white transition-all mb-6">
+<span class="material-symbols-outlined text-[24px]">corporate_fare</span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded-full bg-sky-50 text-sky-600 text-xs font-semibold">맞춤 연수</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors leading-snug">
+            Enterprise DX
+          </h3>
+<p class="text-xs text-slate-500 leading-relaxed">
+            사내 생성형 AI 도입 워크숍 및 임직원 실무 역량 강화
+          </p>
+</div>
+<div class="pt-6 flex items-center justify-between text-blue-600 text-xs font-semibold">
+<span class="">상세보기</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Trending Bootcamps (Spacious & Clean Cards) -->
+<section class="w-full py-24 bg-slate-50/50" id="trending-courses">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
+<div>
+<span class="text-xs font-bold text-blue-600 uppercase tracking-wider block mb-2">Featured Courses</span>
+<h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          지금 가장 인기 있는 부트캠프
+        </h2>
+</div>
+<a class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors" href="#">
+        전체 과정 보기
+        <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+</div>
+<!-- 3 Course Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group">
+<div>
+<div class="relative h-48 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" style="background-image: url('assets/img_4d9de76da0.jpg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+<div class="absolute top-3 left-3">
+<span class="px-2.5 py-1 bg-white/90 backdrop-blur-sm text-blue-600 rounded-full text-xs font-semibold shadow-sm">국비지원 100%</span>
+</div>
+<div class="absolute bottom-3 left-3 text-white text-xs font-medium">
+              6개월 집중 트랙
+            </div>
+</div>
+<div class="p-6 space-y-3">
+<div class="flex items-center justify-between text-xs">
+<span class="font-medium text-blue-600">AI &amp; MLOps</span>
+<span class="flex items-center gap-1 text-amber-500 font-semibold">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span> 4.95
+              </span>
+</div>
+<h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-relaxed">
+              LLM 엔지니어링 &amp; 대규모 데이터 파이프라인
+            </h3>
+<p class="text-xs text-slate-500 line-clamp-2 leading-relaxed">
+              LangChain, RAG 아키텍처 실무 설계부터 MLOps 배포 자동화까지 기업 실전 과제를 직접 완성합니다.
+            </p>
+</div>
+</div>
+<div class="p-6 pt-0 space-y-4">
+<div class="flex items-center justify-between pt-4 border-t border-slate-100">
+<div class="flex items-center gap-2.5">
+<img alt="강민우 마스터" class="w-8 h-8 rounded-full object-cover" src="assets/img_4d5ad7df64.jpg">
+<span class="text-xs text-slate-600 font-medium">강민우 마스터</span>
+</div>
+<span class="text-base font-bold text-blue-600">0원 (전액지원)</span>
+</div>
+<button class="w-full py-2.5 bg-gradient-to-r from-blue-500 to-sky-400 hover:from-blue-600 hover:to-sky-500 text-white rounded-xl text-xs font-semibold shadow-sm transition-all" type="button">
+            상세 커리큘럼 보기
+          </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group">
+<div>
+<div class="relative h-48 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" style="background-image: url('assets/img_c1b79bb9f2.jpg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+<div class="absolute top-3 left-3">
+<span class="px-2.5 py-1 bg-white/90 backdrop-blur-sm text-blue-600 rounded-full text-xs font-semibold shadow-sm">선착순 마감임박</span>
+</div>
+<div class="absolute bottom-3 left-3 text-white text-xs font-medium">
+              5.5개월 풀타임
+            </div>
+</div>
+<div class="p-6 space-y-3">
+<div class="flex items-center justify-between text-xs">
+<span class="font-medium text-sky-600">풀스택 아키텍트</span>
+<span class="flex items-center gap-1 text-amber-500 font-semibold">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span> 4.92
+              </span>
+</div>
+<h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-relaxed">
+              대용량 트래픽 백엔드 &amp; Next.js 풀스택
+            </h3>
+<p class="text-xs text-slate-500 line-clamp-2 leading-relaxed">
+              MSA, Kafka 비동기 메시징, Redis 및 클라우드 인프라 기반 실무 포트폴리오를 완성합니다.
+            </p>
+</div>
+</div>
+<div class="p-6 pt-0 space-y-4">
+<div class="flex items-center justify-between pt-4 border-t border-slate-100">
+<div class="flex items-center gap-2.5">
+<img alt="이지수 마스터" class="w-8 h-8 rounded-full object-cover" src="assets/img_2cfe055345.jpg">
+<span class="text-xs text-slate-600 font-medium">이지수 마스터</span>
+</div>
+<span class="text-base font-bold text-blue-600">0원 (전액지원)</span>
+</div>
+<button class="w-full py-2.5 bg-gradient-to-r from-blue-500 to-sky-400 hover:from-blue-600 hover:to-sky-500 text-white rounded-xl text-xs font-semibold shadow-sm transition-all" type="button">
+            상세 커리큘럼 보기
+          </button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group">
+<div>
+<div class="relative h-48 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" style="background-image: url('assets/img_5e985779b0.jpg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+<div class="absolute top-3 left-3">
+<span class="px-2.5 py-1 bg-white/90 backdrop-blur-sm text-slate-700 rounded-full text-xs font-semibold shadow-sm">직장인 야간/주말</span>
+</div>
+<div class="absolute bottom-3 left-3 text-white text-xs font-medium">
+              12주 파트타임
+            </div>
+</div>
+<div class="p-6 space-y-3">
+<div class="flex items-center justify-between text-xs">
+<span class="font-medium text-blue-600">프로덕트 매니지먼트</span>
+<span class="flex items-center gap-1 text-amber-500 font-semibold">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span> 4.89
+              </span>
+</div>
+<h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-relaxed">
+              데이터 드리븐 PM/PO 실전 부트캠프
+            </h3>
+<p class="text-xs text-slate-500 line-clamp-2 leading-relaxed">
+              Amplitude 퍼널 분석과 가설 검증, 유니콘 스타트업 케이스 기반 PRD 포트폴리오를 작성합니다.
+            </p>
+</div>
+</div>
+<div class="p-6 pt-0 space-y-4">
+<div class="flex items-center justify-between pt-4 border-t border-slate-100">
+<div class="flex items-center gap-2.5">
+<img alt="박준성 마스터" class="w-8 h-8 rounded-full object-cover" src="assets/img_5573eadf61.jpg">
+<span class="text-xs text-slate-600 font-medium">박준성 마스터</span>
+</div>
+<span class="text-base font-bold text-slate-900">1,680,000원</span>
+</div>
+<button class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold transition-all" type="button">
+            상세 커리큘럼 보기
+          </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: Why Credence (Generous Spacing) -->
+<section class="w-full py-24 bg-white">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="text-xs font-bold text-blue-600 uppercase tracking-wider block mb-2">Why Credence</span>
+<h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-3 leading-snug">
+        결과로 증명하는 3가지 학습 차별점
+      </h2>
+<p class="text-sm text-slate-500 leading-relaxed">
+        현업의 속도와 문제 해결 방식을 온전히 체득하는 몰입형 교육 환경
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-8 rounded-2xl bg-slate-50/50 border border-slate-100 hover:border-blue-100 transition-colors">
+<div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[24px]">group_work</span>
+</div>
+<h3 class="text-base font-bold text-slate-900 mb-2">현업 리드급 1:1 멘토링</h3>
+<p class="text-xs sm:text-sm text-slate-500 leading-relaxed">
+          유수 빅테크 7년 차 이상의 시니어 엔지니어가 코드 리뷰와 설계를 밀착 피드백합니다.
+        </p>
+</div>
+<div class="p-8 rounded-2xl bg-slate-50/50 border border-slate-100 hover:border-blue-100 transition-colors">
+<div class="w-12 h-12 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[24px]">database</span>
+</div>
+<h3 class="text-base font-bold text-slate-900 mb-2">기업 실데이터 연계 프로젝트</h3>
+<p class="text-xs sm:text-sm text-slate-500 leading-relaxed">
+          토이 프로젝트가 아닌, 실제 기업의 비즈니스 로그와 데이터셋을 다루며 문제를 해결합니다.
+        </p>
+</div>
+<div class="p-8 rounded-2xl bg-slate-50/50 border border-slate-100 hover:border-blue-100 transition-colors">
+<div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[24px]">rocket_launch</span>
+</div>
+<h3 class="text-base font-bold text-slate-900 mb-2">밀착 커리어 코칭 &amp; 채용 연계</h3>
+<p class="text-xs sm:text-sm text-slate-500 leading-relaxed">
+          이력서 첨삭부터 기술 면접 시뮬레이션, 수료생 전용 프라이빗 채용 데이를 지원합니다.
+        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: Testimonials (Clean, Airy) -->
+<section class="w-full py-24 bg-slate-50/50 border-t border-slate-100">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="text-xs font-bold text-blue-600 uppercase tracking-wider block mb-2">Reviews</span>
+<h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+        수료생의 실제 후기
+      </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white p-7 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between">
+<p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+          “문과 출신 비전공자였지만 멘토님의 집요한 코드 리뷰 덕분에 실전 감각을 완성했습니다. 수료 직후 프라이빗 채용 데이를 통해 플랫폼사 백엔드로 합격했습니다.”
+        </p>
+<div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+<img alt="정우진 님" class="w-9 h-9 rounded-full object-cover" src="assets/img_a3178878e9.jpg">
+<div>
+<div class="text-xs font-bold text-slate-900">정우진 님</div>
+<div class="text-[11px] text-blue-600 font-medium">토스페이먼츠 백엔드 SE 합격</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-7 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between">
+<p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+          “단순 대시보드 제작에서 한계를 느끼던 중 MLOps 과정을 수강했습니다. 프로덕션 레벨의 머신러닝 배포 경험이 이직 기술 면접에서 결정적 역할을 했습니다.”
+        </p>
+<div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+<img alt="김소은 님" class="w-9 h-9 rounded-full object-cover" src="assets/img_fcc659baae.jpg">
+<div>
+<div class="text-xs font-bold text-slate-900">김소은 님</div>
+<div class="text-[11px] text-blue-600 font-medium">네이버 AI Lab ML 엔지니어 이직</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-7 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between">
+<p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+          “현직 PO 강사진으로부터 데이터 가설 검증과 설득력 있는 PRD 작성법을 체득하여, 4년 차 마케터에서 성공적으로 PO 직무 전환을 이뤄냈습니다.”
+        </p>
+<div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+<img alt="박현철 님" class="w-9 h-9 rounded-full object-cover" src="assets/img_9f7345cc1c.jpg">
+<div>
+<div class="text-xs font-bold text-slate-900">박현철 님</div>
+<div class="text-[11px] text-blue-600 font-medium">당근마켓 커머스 PO 합격</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: Enterprise Banner (Soft Gradient, Airy) -->
+<section class="w-full py-16 bg-white">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="relative bg-gradient-to-r from-blue-500 via-blue-500 to-sky-400 rounded-3xl p-8 sm:p-12 text-white shadow-lg shadow-blue-500/10 overflow-hidden">
+<div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-white/10 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+<div class="space-y-3 max-w-2xl text-center lg:text-left">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 backdrop-blur-sm text-white text-xs font-semibold">
+<span class="material-symbols-outlined text-[16px]">domain</span> Credence for Enterprise
+          </span>
+<h2 class="text-2xl sm:text-3xl font-bold tracking-tight">
+            기업 맞춤형 DX &amp; 사내 연수 솔루션
+          </h2>
+<p class="text-sm text-blue-50 leading-relaxed">
+            스타트업부터 대기업까지, 도메인에 최적화된 생성형 AI 워크숍과 실무 개발자 역량 강화 프로그램을 맞춤 설계합니다.
+          </p>
+</div>
+<div class="shrink-0 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+<a class="inline-flex items-center justify-center gap-2 bg-white text-blue-600 hover:bg-blue-50 px-6 py-3.5 rounded-full text-sm font-semibold shadow-sm transition-all" href="#">
+<span class="">B2B 제안서 다운로드</span>
+<span class="material-symbols-outlined text-[18px]">download</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: Consultation Form (Minimal, Airy) -->
+<section class="w-full py-20 bg-slate-50/50" id="consultation-card">
+<div class="max-w-4xl mx-auto px-6">
+<div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-8 sm:p-12">
+<div class="text-center max-w-xl mx-auto mb-10">
+<span class="text-xs font-bold text-blue-600 uppercase tracking-wider block mb-2">Free Consultation</span>
+<h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-2 leading-snug">
+          어떤 과정을 들어야 할지 고민되시나요?
+        </h2>
+<p class="text-sm text-slate-500 leading-relaxed">
+          전문 코디네이터가 1:1 맞춤 국비지원 제도와 합격 로드맵을 무료로 컨설팅해 드립니다.
+        </p>
+</div>
+<form class="space-y-4 max-w-lg mx-auto" id="consultation-form">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1.5" for="user-name">이름</label>
+<input class="w-full h-11 px-3.5 bg-slate-50/50 border border-slate-200/80 rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:bg-white focus:border-blue-400 transition-all" id="user-name" placeholder="홍길동" required="" type="text">
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1.5" for="user-phone">연락처</label>
+<input class="w-full h-11 px-3.5 bg-slate-50/50 border border-slate-200/80 rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:bg-white focus:border-blue-400 transition-all" id="user-phone" placeholder="010-0000-0000" required="" type="tel">
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1.5" for="desired-field">희망 직무 트랙</label>
+<select class="w-full h-11 px-3.5 bg-slate-50/50 border border-slate-200/80 rounded-xl text-sm text-slate-800 focus:outline-none focus:bg-white focus:border-blue-400 transition-all" id="desired-field" required="">
+<option disabled="" selected="" value="">관심 트랙을 선택하세요</option>
+<option value="ai-data">AI &amp; Data Engineering (LLM/MLOps)</option>
+<option value="cloud-backend">Full-stack &amp; Cloud (Next.js/Spring)</option>
+<option value="pm-ux">Product Management &amp; UX (PM/PO)</option>
+<option value="b2b-dx">기업 맞춤형 연수 (B2B)</option>
+<option value="not-sure">아직 고민 중 (맞춤 진단)</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1.5" for="consult-note">문의 내용 (선택)</label>
+<textarea class="w-full p-3 bg-slate-50/50 border border-slate-200/80 rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:bg-white focus:border-blue-400 transition-all resize-none" id="consult-note" placeholder="국비지원 대상 여부, 선수 지식 수준 등을 자유롭게 적어주세요." rows="2"></textarea>
+</div>
+<div class="flex items-center gap-2 pt-1">
+<input class="w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-400" id="privacy-agree" required="" type="checkbox">
+<label class="text-xs text-slate-500" for="privacy-agree">개인정보 수집 및 상담 연락에 동의합니다.</label>
+</div>
+<button class="w-full py-3.5 bg-gradient-to-r from-blue-500 to-sky-400 hover:from-blue-600 hover:to-sky-500 text-white font-semibold text-sm rounded-xl shadow-sm shadow-blue-500/20 hover:shadow-md hover:shadow-blue-500/30 transition-all" type="submit">
+          1:1 맞춤 무료 상담 신청
+        </button>
+</form>
+<div class="hidden mt-6 p-4 bg-blue-50 text-blue-700 rounded-xl text-center text-sm font-medium" id="form-success-msg">
+<span class="material-symbols-outlined text-[20px] align-middle mr-1">task_alt</span>
+        상담 신청이 접수되었습니다. 24시간 내 순차 연락드립니다.
+      </div>
+</div>
+</div>
+</section>
+<!-- Interactive script -->
+<script>
+  (function() {
+    const form = document.getElementById('consultation-form');
+    const successMsg = document.getElementById('form-success-msg');
+    if (form && successMsg) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) {
+          submitBtn.textContent = '신청 접수 중...';
+          submitBtn.disabled = true;
+        }
+        setTimeout(() => {
+          form.reset();
+          form.classList.add('hidden');
+          successMsg.classList.remove('hidden');
+        }, 500);
+      });
+    }
+  })();
+</script>
+</div></main><footer id="footer" class="w-full bg-white border-t border-slate-100 text-slate-500"><div class="max-w-7xl mx-auto px-6 lg:px-12 py-16"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12"><div class="lg:col-span-2 space-y-4"><div class="flex items-center gap-3"><img alt="RHEA VISION" class="h-16 w-auto object-contain" src="assets/rheavision-logo-1-04.svg"></div><p class="text-xs text-slate-500 max-w-sm leading-relaxed">기업과 핵심 인재의 성장을 위한 산업 연계 직무 교육 및 디지털 트랜스포메이션 전문 연수 솔루션을 제공합니다.</p></div><div><h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-4">교육과정</h4><ul class="space-y-2 text-xs"><li class=""><a class="hover:text-blue-600 transition-colors" data-path="courses" href="#trending-courses">AI &amp; 데이터 사이언스</a></li><li class=""><a class="hover:text-blue-600 transition-colors" data-path="courses" href="#trending-courses">클라우드 &amp; 소프트웨어</a></li><li class=""><a class="hover:text-blue-600 transition-colors" data-path="courses" href="#trending-courses">프로덕트 매니지먼트</a></li><li class=""><a class="hover:text-blue-600 transition-colors" data-path="courses" href="#trending-courses">기업 맞춤형 DX 트랙</a></li></ul></div><div><h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-4">고객센터</h4><div class="space-y-1.5"><p class="text-lg font-bold text-blue-600 tracking-tight">02-1588-0000</p><p class="text-xs text-slate-500">평일 09:00 ~ 18:00</p><p class="text-xs text-slate-400">이메일: contact@credence.edu</p></div></div><div><h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-4">바로가기</h4><div class="flex flex-col space-y-2 text-xs"><a class="hover:text-blue-600 transition-colors" href="#">기업교육 파트너십</a><a class="hover:text-blue-600 transition-colors" href="#">학습 이수 인증 센터</a><a class="hover:text-blue-600 transition-colors" href="#">Credence 블로그</a></div></div></div><div class="pt-8 border-t border-slate-100 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-slate-400"><p class="">© 2025 Credence EduTech Inc. All rights reserved.</p><div class="flex items-center gap-6"><a class="hover:text-slate-700 transition-colors" data-path="privacy-policy" href="#">개인정보처리방침</a><a class="hover:text-slate-700 transition-colors" data-path="terms-of-service" href="#">이용약관</a></div></div></div></footer>
+
+
+
+
+
+<script>
+  // 업데이트 소식 슬라이더: 1초마다 다음 사진으로 넘김 (마지막 다음은 첫 장으로 이어짐)
+  (function () {
+    const slider = document.getElementById('news-slider');
+    const track = slider.querySelector('.rv-track');
+    const count = track.children.length - 1; // 마지막 장은 첫 장 복제본
+    const dotsBox = document.getElementById('slider-dots');
+    const toggle = document.getElementById('slider-toggle');
+    const INTERVAL = 1000;
+    let index = 0, timer = null, playing = true;
+
+    const dots = Array.from({ length: count }, (_, i) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'rv-dot-btn'; b.setAttribute('aria-label', (i + 1) + '번째 사진');
+      b.addEventListener('click', () => { go(i); restart(); });
+      dotsBox.appendChild(b);
+      return b;
+    });
+
+    function paint() { dots.forEach((d, i) => d.setAttribute('aria-current', String(i === index % count))); }
+    function go(i, animate = true) {
+      index = i;
+      track.style.transition = animate ? '' : 'none';
+      track.style.transform = `translateX(${-100 * index}%)`;
+      paint();
+    }
+    track.addEventListener('transitionend', () => {
+      if (index === count) { go(0, false); track.offsetHeight; track.style.transition = ''; }
+    });
+    function next() { go(index + 1); }
+    function restart() { clearInterval(timer); if (playing) timer = setInterval(next, INTERVAL); }
+
+    toggle.addEventListener('click', () => {
+      playing = !playing;
+      toggle.classList.toggle('paused', !playing);
+      toggle.setAttribute('aria-label', playing ? '자동 넘김 일시정지' : '자동 넘김 재생');
+      restart();
+    });
+    document.addEventListener('visibilitychange', () => { if (document.hidden) clearInterval(timer); else restart(); });
+    go(0, false);
+    restart();
+  })();
+
+  // 퀵메뉴 접기/펼치기
+  (function () {
+    const menu = document.getElementById('quick-menu');
+    const btn = document.getElementById('quick-toggle');
+    btn.addEventListener('click', () => {
+      const collapsed = menu.classList.toggle('collapsed');
+      btn.setAttribute('aria-expanded', String(!collapsed));
+      btn.setAttribute('aria-label', collapsed ? '퀵메뉴 펼치기' : '퀵메뉴 접기');
+    });
+  })();
+
+  // 헤더 검색창
+  (function () {
+    const bar = document.getElementById('search-bar');
+    const input = document.getElementById('search-input');
+    const open = () => { bar.classList.remove('hidden'); input.focus(); };
+    const close = () => bar.classList.add('hidden');
+    document.getElementById('search-open').addEventListener('click', () => bar.classList.contains('hidden') ? open() : close());
+    document.querySelectorAll('[data-search-trigger]').forEach(b => b.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); open(); }));
+    document.getElementById('search-close').addEventListener('click', close);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+    bar.addEventListener('submit', e => {
+      e.preventDefault();
+      const q = input.value.trim();
+      if (!q) return;
+      const hit = [...document.querySelectorAll('main h1, main h2, main h3, main p')].find(el => el.textContent.includes(q));
+      if (hit) { close(); hit.scrollIntoView({ behavior: 'smooth', block: 'center' }); hit.animate([{ backgroundColor: '#fff3a3' }, { backgroundColor: 'transparent' }], { duration: 1600 }); }
+      else { input.value = ''; input.placeholder = `'${q}' 검색 결과가 없습니다`; }
+    });
+  })();
+</script>
+</body></html>

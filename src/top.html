@@ -1,0 +1,115 @@
+<header class="rv-header fixed top-0 left-0 w-full z-50">
+  <div class="rv-wrap h-[90px] flex items-center">
+    <a href="#top" class="shrink-0 ml-[50px]" aria-label="RHEA VISION 홈"><img src="assets/rheavision-logo-1-04.svg" alt="RHEA VISION" class="h-[66px] w-auto logo-white"></a>
+    <nav class="hidden lg:flex items-center ml-[363px] gap-[100px]">
+      <div class="rv-dd">
+        <button type="button" class="rv-dd-btn">제품 <span class="material-symbols-outlined">arrow_drop_down</span></button>
+        <div class="rv-dd-menu"><a href="#hero-cards">키오에듀 교육용 키오스크</a><a href="#news">RV2000 AI 스마트 케어</a></div>
+      </div>
+      <div class="rv-dd">
+        <button type="button" class="rv-dd-btn">도입 분야 <span class="material-symbols-outlined">arrow_drop_down</span></button>
+        <div class="rv-dd-menu"><a href="#ai-care">복지관 · 경로당</a><a href="#ai-care">교육기관</a><a href="#ai-care">공공기관</a></div>
+      </div>
+      <div class="rv-dd">
+        <button type="button" class="rv-dd-btn">자료실 <span class="material-symbols-outlined">arrow_drop_down</span></button>
+        <div class="rv-dd-menu"><a href="#news">업데이트 소식</a><a href="#news">자료 다운로드</a><a href="#consultation-card">자주 묻는 질문</a></div>
+      </div>
+    </nav>
+    <button type="button" id="search-open" class="hidden lg:inline-flex ml-[73px] text-white" aria-label="검색"><span class="material-symbols-outlined text-[40px]">search</span></button>
+    <a href="#consultation-card" class="rv-cta ml-auto mr-[65px] w-[163px] h-[55px] text-[18px]">도입 문의 <span class="material-symbols-outlined text-[22px]">arrow_forward</span></a>
+  </div>
+  <form id="search-bar" class="rv-search hidden" role="search">
+    <div class="max-w-3xl mx-auto flex items-center gap-3 px-6 py-4">
+      <span class="material-symbols-outlined text-slate-400">search</span>
+      <input id="search-input" type="search" placeholder="제품, 도입 분야, 자료를 검색하세요" class="flex-1 bg-transparent outline-none text-[16px] text-slate-800 placeholder:text-slate-400">
+      <button type="button" id="search-close" class="text-slate-500 hover:text-slate-800" aria-label="닫기"><span class="material-symbols-outlined">close</span></button>
+    </div>
+  </form>
+</header>
+
+<main id="top" class="w-full pt-[90px] bg-background"><div class="flex flex-col w-full">
+
+<!-- Hero -->
+<section class="rv-hero relative w-full h-[815px] overflow-hidden">
+  <div class="rv-wrap relative h-full">
+    <img src="assets/hero_kiosk.webp" alt="" class="absolute left-[-111px] top-[162px] w-[1148px] h-[646px] max-w-none pointer-events-none select-none">
+    <img src="assets/hero_camera.webp" alt="" class="absolute left-[434px] top-[249px] w-[1006px] h-[566px] max-w-none pointer-events-none select-none">
+    <i class="rv-dot" style="left:410px;top:27px"></i><i class="rv-dot" style="left:429px;top:18px"></i><i class="rv-dot" style="left:785px;top:92px"></i><i class="rv-dot" style="left:848px;top:56px"></i><i class="rv-dot" style="left:1019px;top:19px"></i><i class="rv-dot" style="left:1303px;top:58px"></i><i class="rv-dot" style="left:1386px;top:55px"></i><i class="rv-dot" style="left:1157px;top:274px"></i><i class="rv-dot" style="left:1355px;top:274px"></i><i class="rv-dot" style="left:23px;top:311px"></i><i class="rv-dot" style="left:1343px;top:547px"></i><i class="rv-dot" style="left:986px;top:354px"></i>
+    <div class="absolute left-0 right-0 top-[100px] text-center text-white pointer-events-none">
+      <h1 class="font-bold text-[59px] leading-[66px] tracking-[-0.5px]">디지털 생활과 케어를<br>함께 돕는 기술</h1>
+      <p class="mt-[17px] text-[20.5px] leading-[33px] text-[#d6e6e0]">시니어의 키오스크 연습부터 복지관의 비접촉 AI 상태 분석까지<br>두 가지 사업으로 현장을 지원합니다.</p>
+    </div>
+    <div id="hero-cards" class="absolute top-[369px] left-1/2 -translate-x-1/2 flex gap-[37px]">
+      <article class="rv-glass">
+        <div class="rv-glass-icon"><span class="material-symbols-outlined">person</span></div>
+        <h2>키오에듀<br>교육용 키오스크</h2>
+        <p>음식 주문, 교통편 예매, ATM,<br>병원 접수, 민원서류 발급을<br>미리 연습하는 교육 솔루션</p>
+        <a href="#trending-courses" class="rv-cta w-[211px] h-[57px] text-[15.9px] rounded-[20px] justify-between px-[26px]">키오에듀 보기 <span class="material-symbols-outlined text-[22px]">arrow_forward</span></a>
+      </article>
+      <article class="rv-glass">
+        <div class="rv-glass-icon"><span class="material-symbols-outlined">crop_landscape</span></div>
+        <h2>RV2000<br>AI 스마트 케어</h2>
+        <p>카메라 기반 비접촉 얼굴 인식으로<br>출석 확인과 상태 분석을 돕는<br>케어 보조 시스템</p>
+        <a href="#ai-care" class="rv-cta w-[208px] h-[57px] text-[15.9px] rounded-[20px] justify-between px-[26px]">RV2000 보기 <span class="material-symbols-outlined text-[22px]">arrow_forward</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 업데이트 소식 -->
+<section id="news" class="relative w-full bg-[#fafcff] pt-[66px]">
+  <div class="bg-white h-[801px]">
+    <div class="rv-wrap relative h-full">
+      <img src="assets/rheavision-logo-1-04.svg" alt="RHEA VISION" class="absolute left-[48px] top-[27px] h-[66px] w-auto">
+      <h2 class="absolute left-[172px] top-[36px] text-[41px] font-bold text-[#111] tracking-[-0.5px]">업데이트 소식</h2>
+      <div class="absolute right-[53px] top-[43px] flex items-center gap-[10px]">
+        <button type="button" class="mr-[34px] text-[#111]" data-search-trigger aria-label="소식 검색"><span class="material-symbols-outlined text-[38px]">search</span></button>
+        <a href="#news" class="h-[34px] px-[12px] inline-flex items-center rounded-[3px] bg-[#111] text-white text-[14.8px] font-medium hover:bg-black">자료 다운로드</a>
+        <a href="#consultation-card" class="h-[34px] px-[15px] inline-flex items-center rounded-[3px] bg-[#04225e] text-white text-[14.8px] font-medium hover:bg-[#031a4a]">도입 문의</a>
+      </div>
+
+      <div id="news-slider" class="rv-slider absolute left-[38px] top-[247px] w-[1349px] h-[270px] rounded-[11px] overflow-hidden bg-black" aria-roledescription="carousel">
+        <div class="rv-track">
+          <img src="assets/slide_2036.jpg" alt="RV2000 카메라 모듈">
+          <img src="assets/slide_2030.jpg" alt="RV2000 키오스크 정면">
+          <img src="assets/slide_2031.jpg" alt="RV2000 카메라와 디스플레이">
+          <img src="assets/slide_2033.jpg" alt="RV2000 키오스크 측면">
+          <img src="assets/slide_2036.jpg" alt="" aria-hidden="true">
+        </div>
+        <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(90deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.45) 45%,rgba(0,0,0,0) 75%)"></div>
+        <div class="absolute left-[89px] top-[56px] text-white">
+          <p class="text-[23.9px] font-medium">AI 스마트 케어</p>
+          <p class="mt-[2px] flex items-baseline gap-[16px]"><span class="font-['Inter'] font-bold text-[52.4px] leading-[73px]">RV2000</span><span class="text-[31.9px] font-medium">케어 보조 시스템</span></p>
+          <a href="#ai-care" class="mt-[14px] inline-flex items-center gap-1 text-[19.4px] font-medium hover:underline">보러가기 <span class="material-symbols-outlined text-[22px]">chevron_right</span></a>
+        </div>
+      </div>
+      <div class="absolute left-0 right-0 top-[541px] flex items-center justify-center gap-[13px]">
+        <button type="button" id="slider-toggle" class="w-[13px] h-[13px] flex items-center justify-center gap-[4px] mr-[3px]" aria-label="자동 넘김 일시정지"><i class="rv-bar"></i><i class="rv-bar"></i></button>
+        <div id="slider-dots" class="flex gap-[13px]"></div>
+      </div>
+
+      <aside id="quick-menu" class="rv-quick absolute right-[62px] top-[188px]">
+        <div class="rv-quick-items">
+          <a href="#top"><span style="background:#f05a28"><span class="material-symbols-outlined">web_asset</span></span>사이트맵</a>
+          <a href="#consultation-card"><span style="background:#04225e"><span class="material-symbols-outlined">web_asset</span></span>1:1 문의</a>
+          <a href="#footer"><span style="background:#3aa04a"><span class="material-symbols-outlined">web_asset</span></span>오시는 길</a>
+          <a href="#footer"><span style="background:#2d6fe0"><span class="material-symbols-outlined">web_asset</span></span>레아비전 SNS</a>
+        </div>
+        <button type="button" id="quick-toggle" class="rv-quick-plus" aria-label="퀵메뉴 접기" aria-expanded="true"><span class="material-symbols-outlined">add</span></button>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 얼굴을 읽는 AI 케어 기술 -->
+<section id="ai-care" class="relative w-full h-[819px] overflow-hidden bg-black">
+  <img src="assets/ai_banner.jpg" alt="RV2000 카메라 모듈 클로즈업" class="absolute inset-0 w-full h-full object-cover">
+  <div class="rv-wrap relative h-full text-white text-center">
+    <img src="assets/rheavision-logo-1-04.svg" alt="RHEA VISION" class="absolute left-[71px] top-[31px] h-[66px] w-auto logo-white">
+    <h2 class="pt-[302px] text-[66px] leading-[92px] font-bold tracking-[-0.5px]">얼굴을 읽는 AI 케어 기술</h2>
+    <p class="mt-[33px] text-[26.2px] leading-[48px]">레아비전의 비전 AI는 일반 카메라로 얼굴과 표정을 분석해,<br>복지 현장의 출석 확인과 케어 업무를 돕습니다.</p>
+    <p class="absolute left-0 right-0 bottom-[55px] text-[12.4px] text-white/45">제품 이미지 · RV2000 카메라 모듈 클로즈업</p>
+  </div>
+</section>
+
+<a href="#consultation-card" class="rv-chat fixed z-40 right-[38px] bottom-[40px]" aria-label="상담 채팅"><span class="material-symbols-outlined">more_horiz</span></a>

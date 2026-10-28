@@ -1,0 +1,74 @@
+<script>
+  // 업데이트 소식 슬라이더: 1초마다 다음 사진으로 넘김 (마지막 다음은 첫 장으로 이어짐)
+  (function () {
+    const slider = document.getElementById('news-slider');
+    const track = slider.querySelector('.rv-track');
+    const count = track.children.length - 1; // 마지막 장은 첫 장 복제본
+    const dotsBox = document.getElementById('slider-dots');
+    const toggle = document.getElementById('slider-toggle');
+    const INTERVAL = 1000;
+    let index = 0, timer = null, playing = true;
+
+    const dots = Array.from({ length: count }, (_, i) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'rv-dot-btn'; b.setAttribute('aria-label', (i + 1) + '번째 사진');
+      b.addEventListener('click', () => { go(i); restart(); });
+      dotsBox.appendChild(b);
+      return b;
+    });
+
+    function paint() { dots.forEach((d, i) => d.setAttribute('aria-current', String(i === index % count))); }
+    function go(i, animate = true) {
+      index = i;
+      track.style.transition = animate ? '' : 'none';
+      track.style.transform = `translateX(${-100 * index}%)`;
+      paint();
+    }
+    track.addEventListener('transitionend', () => {
+      if (index === count) { go(0, false); track.offsetHeight; track.style.transition = ''; }
+    });
+    function next() { go(index + 1); }
+    function restart() { clearInterval(timer); if (playing) timer = setInterval(next, INTERVAL); }
+
+    toggle.addEventListener('click', () => {
+      playing = !playing;
+      toggle.classList.toggle('paused', !playing);
+      toggle.setAttribute('aria-label', playing ? '자동 넘김 일시정지' : '자동 넘김 재생');
+      restart();
+    });
+    document.addEventListener('visibilitychange', () => { if (document.hidden) clearInterval(timer); else restart(); });
+    go(0, false);
+    restart();
+  })();
+
+  // 퀵메뉴 접기/펼치기
+  (function () {
+    const menu = document.getElementById('quick-menu');
+    const btn = document.getElementById('quick-toggle');
+    btn.addEventListener('click', () => {
+      const collapsed = menu.classList.toggle('collapsed');
+      btn.setAttribute('aria-expanded', String(!collapsed));
+      btn.setAttribute('aria-label', collapsed ? '퀵메뉴 펼치기' : '퀵메뉴 접기');
+    });
+  })();
+
+  // 헤더 검색창
+  (function () {
+    const bar = document.getElementById('search-bar');
+    const input = document.getElementById('search-input');
+    const open = () => { bar.classList.remove('hidden'); input.focus(); };
+    const close = () => bar.classList.add('hidden');
+    document.getElementById('search-open').addEventListener('click', () => bar.classList.contains('hidden') ? open() : close());
+    document.querySelectorAll('[data-search-trigger]').forEach(b => b.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); open(); }));
+    document.getElementById('search-close').addEventListener('click', close);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+    bar.addEventListener('submit', e => {
+      e.preventDefault();
+      const q = input.value.trim();
+      if (!q) return;
+      const hit = [...document.querySelectorAll('main h1, main h2, main h3, main p')].find(el => el.textContent.includes(q));
+      if (hit) { close(); hit.scrollIntoView({ behavior: 'smooth', block: 'center' }); hit.animate([{ backgroundColor: '#fff3a3' }, { backgroundColor: 'transparent' }], { duration: 1600 }); }
+      else { input.value = ''; input.placeholder = `'${q}' 검색 결과가 없습니다`; }
+    });
+  })();
+</script>

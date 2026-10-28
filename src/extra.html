@@ -1,0 +1,52 @@
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+  html { min-width: 1440px; scroll-behavior: smooth; scroll-padding-top: 90px; }
+  body { font-family: "Noto Sans KR", Inter, sans-serif; }
+  .rv-wrap { position: relative; width: 1440px; margin: 0 auto; }
+  .logo-white { filter: brightness(0) invert(1); }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; line-height: 1; }
+
+  .rv-header { background: linear-gradient(90deg, #001c3d 0%, #1c4fa5 100%); }
+  .rv-dd { position: relative; }
+  .rv-dd-btn { display: inline-flex; align-items: center; gap: 4px; color: #fff; font-size: 18.2px; font-weight: 500; height: 90px; }
+  .rv-dd-btn .material-symbols-outlined { font-size: 26px; transition: transform .2s; }
+  .rv-dd:hover .rv-dd-btn .material-symbols-outlined, .rv-dd:focus-within .rv-dd-btn .material-symbols-outlined { transform: rotate(180deg); }
+  .rv-dd-menu { position: absolute; top: 78px; left: 50%; transform: translate(-50%, 6px); min-width: 200px; padding: 8px; border-radius: 12px; background: #fff; box-shadow: 0 12px 32px rgba(0, 28, 61, .18); opacity: 0; visibility: hidden; transition: opacity .18s, transform .18s, visibility .18s; }
+  .rv-dd:hover .rv-dd-menu, .rv-dd:focus-within .rv-dd-menu { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+  .rv-dd-menu a { display: block; padding: 10px 14px; border-radius: 8px; font-size: 15px; color: #1e293b; white-space: nowrap; }
+  .rv-dd-menu a:hover { background: #eef5ff; color: #04225e; }
+  .rv-cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 27px; color: #0f3a30; font-weight: 500; background: linear-gradient(90deg, #4ea6ff, #85c2ff); transition: filter .2s, box-shadow .2s; }
+  .rv-cta:hover { filter: brightness(1.06); box-shadow: 0 6px 18px rgba(78, 166, 255, .45); }
+  .rv-search { background: #fff; border-bottom: 1px solid #e2e8f0; box-shadow: 0 8px 24px rgba(0, 0, 0, .08); }
+
+  .rv-hero { background: linear-gradient(75deg, #13295a 0%, #2d5bab 55%, #5888d0 100%); }
+  .rv-dot { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: rgba(144, 227, 255, .5); }
+  .rv-glass { position: relative; width: 307px; height: 395px; padding: 32px 26px 0; border-radius: 20px; color: #fff; background: rgba(255, 255, 255, .25); border: 1px solid rgba(204, 238, 255, .72); backdrop-filter: blur(32px); -webkit-backdrop-filter: blur(32px); }
+  .rv-glass-icon { width: 63px; height: 63px; border-radius: 50%; background: rgba(241, 248, 255, .33); display: flex; align-items: center; justify-content: center; color: #005cb9; }
+  .rv-glass-icon .material-symbols-outlined { font-size: 26px; }
+  .rv-glass h2 { margin-top: 17px; font-size: 22.8px; line-height: 28.5px; font-weight: 700; }
+  .rv-glass p { margin-top: 40px; font-size: 15.9px; line-height: 25px; color: rgba(255, 255, 255, .75); }
+  .rv-glass .rv-cta { position: absolute; left: 26px; top: 314px; }
+
+  .rv-track { display: flex; height: 100%; transition: transform .6s cubic-bezier(.65, 0, .35, 1); }
+  .rv-track img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; }
+  .rv-bar { width: 3px; height: 13px; background: #bbb; }
+  #slider-toggle.paused .rv-bar:first-child { width: 0; height: 0; background: none; border-left: 11px solid #bbb; border-top: 6.5px solid transparent; border-bottom: 6.5px solid transparent; }
+  #slider-toggle.paused .rv-bar:last-child { display: none; }
+  .rv-dot-btn { width: 11px; height: 11px; border-radius: 50%; background: #ccc; transition: background .2s; }
+  .rv-dot-btn[aria-current="true"] { background: #04225e; }
+
+  .rv-quick { width: 105px; padding: 19px 0 14px; border-radius: 14px; background: #fff; border: 1px solid #e6e6e6; display: flex; flex-direction: column; align-items: center; }
+  .rv-quick-items { display: flex; flex-direction: column; gap: 14px; overflow: hidden; max-height: 400px; transition: max-height .3s, opacity .3s; }
+  .rv-quick.collapsed .rv-quick-items { max-height: 0; opacity: 0; }
+  .rv-quick-items a { display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 13.7px; color: #222; white-space: nowrap; }
+  .rv-quick-items a > span { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; transition: transform .2s; }
+  .rv-quick-items a:hover > span { transform: translateY(-2px); }
+  .rv-quick-items .material-symbols-outlined { font-size: 20px; }
+  .rv-quick-plus { margin-top: 12px; width: 64px; height: 64px; border-radius: 50%; border: 1px solid #04225e; color: #04225e; display: flex; align-items: center; justify-content: center; transition: transform .3s; }
+  .rv-quick-plus .material-symbols-outlined { font-size: 30px; }
+  .rv-quick.collapsed .rv-quick-plus { margin-top: 0; transform: rotate(45deg); }
+
+  .rv-chat { width: 79px; height: 79px; border-radius: 50%; background: #04225e; border: 1px solid #a7ceff; display: flex; align-items: center; justify-content: center; color: #04225e; box-shadow: 0 8px 24px rgba(4, 34, 94, .35); }
+  .rv-chat .material-symbols-outlined { width: 33px; height: 25px; border-radius: 7px; background: #fff; font-size: 26px; display: flex; align-items: center; justify-content: center; }
+</style>
