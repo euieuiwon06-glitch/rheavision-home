@@ -1,12 +1,12 @@
 <script>
-  // 업데이트 소식 슬라이더: 1초마다 다음 사진으로 넘김 (마지막 다음은 첫 장으로 이어짐)
+  // 업데이트 소식 슬라이더: 2.5초마다 다음 사진으로 넘김 (마지막 다음은 첫 장으로 이어짐)
   (function () {
     const slider = document.getElementById('news-slider');
     const track = slider.querySelector('.rv-track');
     const count = track.children.length - 1; // 마지막 장은 첫 장 복제본
     const dotsBox = document.getElementById('slider-dots');
     const toggle = document.getElementById('slider-toggle');
-    const INTERVAL = 1000;
+    const INTERVAL = 2500;
     let index = 0, timer = null, playing = true;
 
     const dots = Array.from({ length: count }, (_, i) => {
